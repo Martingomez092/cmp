@@ -1,0 +1,36 @@
+{
+    "groups": [
+      {
+        "id": 1,
+        "name": "1 - Jazz y Clásico Elemental"
+      },
+      {
+        "id": 2,
+        "name": "2 - Jazz y Clásico Elemental"
+      },
+      {
+        "id": 3,
+        "name": "Jazz Juvenil"
+      },
+      {
+        "id": 4,
+        "name": "Jazz Adultos Mañana"
+      },
+      {
+        "id": 5,
+        "name": "Jazz Adultos Noche"
+      },
+      {
+        "id": 6,
+        "name": "Jazz Intermedio"
+      },
+      {
+        "id": 7,
+        "name": "Jazz Intermedio Avanzado"
+      },
+      {
+        "id": 8,
+        "name": "Danza clásica"
+      }
+    ]
+  }
