@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta de ID por Nombre</title>
+</head>
+<body>
+  <label for="nombreSelect">Selecciona un nombre:</label>
+  <select id="nombreSelect">
+    <!-- Aquí se llenarán las opciones con JavaScript -->
+  </select>
+  <button id="consultarBtn">Consultar</button>
+
+  <script>
+    // Tu base de datos en formato JSON
+    var baseDeDatos = [
+      { "id": 1, "nombre": "Nombre 1" },
+      { "id": 2, "nombre": "Nombre 2" },
+      { "id": 3, "nombre": "Nombre 3" }
+    ];
+
+    // Función para llenar el select con los nombres de la base de datos
+    function llenarSelect() {
+      var select = document.getElementById("nombreSelect");
+      baseDeDatos.forEach(function(elemento) {
+        var opcion = document.createElement("option");
+        opcion.text = elemento.nombre;
+        opcion.value = elemento.id;
+        select.add(opcion);
+      });
+    }
+
+    // Función para consultar el ID del nombre seleccionado
+    function consultarID() {
+      var nombreSeleccionado = document.getElementById("nombreSelect").value;
+      var resultado = baseDeDatos.find(function(elemento) {
+        return elemento.id == nombreSeleccionado;
+      });
+      alert("El ID del nombre seleccionado es: " + resultado.id);
+    }
+
+    // Llenar el select al cargar la página
+    llenarSelect();
+
+    // Agregar un evento de clic al botón "Consultar"
+    document.getElementById("consultarBtn").addEventListener("click", consultarID);
+  </script>
+</body>
+</html>
