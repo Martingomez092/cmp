@@ -1,44 +1,160 @@
 {
-    "groups": [
-      {
-        "idGroup": 1,
-        "name": "1 - Jazz y Clásico Elemental",
-        "dancers": [{ "id": 1, "name": "Alma Aguirre", "payment": true}, { "id": 2, "name": "Julieta Belinco", "payment": false}]
-      },
-      {
-        "idGroup": 2,
-        "name": "2 - Jazz y Clásico Elemental",
-        "dancers": [{ "id": 3, "name": "Olivia Ontiveros Gomez", "payment": true}, { "id": 4, "name": "Josefina Suarez", "payment": false}]
-      },
-      {
-        "idGroup": 3,
-        "name": "Jazz Juvenil",
-        "dancers": [{ "id": 5, "name": "Delfina Bruno", "payment": true}, { "id": 6, "name": "Guadalupe Panza", "payment": false}]
-      },
-      {
-        "idGroup": 4,
-        "name": "Jazz Adultos Mañana",
-        "dancers": [{ "id": 7, "name": "Silvia Seri", "payment": true}, { "id": 8, "name": "Patricia Fabbri", "payment": false}]
-      },
-      {
-        "idGroup": 5,
-        "name": "Jazz Adultos Noche",
-        "dancers": [{ "id": 9, "name": "Marcela Mendivil", "payment": true}, { "id": 10, "name": "Mariana Fric", "payment": false}]
-      },
-      {
-        "idGroup": 6,
-        "name": "Jazz Intermedio",
-        "dancers": [{ "id": 11, "name": "Florencia Raimondo", "payment": true}, { "id": 12, "name": "Maira Salum", "payment": false}]
-      },
-      {
-        "idGroup": 7,
-        "name": "Jazz Intermedio Avanzado",
-        "dancers": [{ "id": 13, "name": "Valentina Fernández", "payment": true}, { "id": 14, "name": "María Belén Nuevo", "payment": false}]
-      },
-      {
-        "idGroup": 8,
-        "name": "Danza clásica",
-        "dancers": [{ "id": 15, "name": "Micaela Rosa", "payment": true}, { "id": 16, "name": "Oriana Rosa", "payment": false}]
-      }
-    ]
-  }
+  "groups": [
+    {
+      "idGroup": 1,
+      "name": "1 - Jazz y Clásico Elemental",
+      "dancers": [
+        {
+          "id": 1,
+          "name": "Alma Aguirre",
+          "paymentStatus": true,
+          "payments": [
+            {
+              "fecha": "01/01/2023",
+              "mes": "Enero",
+              "tipo": "Total",
+              "monto": "7000"
+            },
+            {
+              "fecha": "01/02/2023",
+              "mes": "Febrero",
+              "tipo": "Total",
+              "monto": "7000"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Julieta Belinco",
+          "paymentStatus": false,
+          "payments": [
+            {
+              "fecha": "02/01/2023",
+              "mes": "Enero",
+              "tipo": "Parcial",
+              "monto": "5000"
+            }, 
+            {
+              "fecha": "02/02/2023",
+              "mes": "Febrero",
+              "tipo": "Parcial",
+              "monto": "5000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "idGroup": 2,
+      "name": "2 - Jazz y Clásico Elemental",
+      "dancers": [
+        {
+          "id": 3,
+          "name": "Olivia Ontiveros Gomez",
+          "paymentStatus": true
+        },
+        {
+          "id": 4,
+          "name": "Josefina Suarez",
+          "paymentStatus": false
+        }
+      ]
+    },
+    {
+      "idGroup": 3,
+      "name": "Jazz Juvenil",
+      "dancers": [
+        {
+          "id": 5,
+          "name": "Delfina Bruno",
+          "paymentStatus": true
+        },
+        {
+          "id": 6,
+          "name": "Guadalupe Panza",
+          "paymentStatus": false
+        }
+      ]
+    },
+    {
+      "idGroup": 4,
+      "name": "Jazz Adultos Mañana",
+      "dancers": [
+        {
+          "id": 7,
+          "name": "Silvia Seri",
+          "paymentStatus": true
+        },
+        {
+          "id": 8,
+          "name": "Patricia Fabbri",
+          "paymentStatus": false
+        }
+      ]
+    },
+    {
+      "idGroup": 5,
+      "name": "Jazz Adultos Noche",
+      "dancers": [
+        {
+          "id": 9,
+          "name": "Marcela Mendivil",
+          "paymentStatus": true
+        },
+        {
+          "id": 10,
+          "name": "Mariana Fric",
+          "paymentStatus": false
+        }
+      ]
+    },
+    {
+      "idGroup": 6,
+      "name": "Jazz Intermedio",
+      "dancers": [
+        {
+          "id": 11,
+          "name": "Florencia Raimondo",
+          "paymentStatus": true
+        },
+        {
+          "id": 12,
+          "name": "Maira Salum",
+          "paymentStatus": false
+        }
+      ]
+    },
+    {
+      "idGroup": 7,
+      "name": "Jazz Intermedio Avanzado",
+      "dancers": [
+        {
+          "id": 13,
+          "name": "Valentina Fernández",
+          "paymentStatus": true
+        },
+        {
+          "id": 14,
+          "name": "María Belén Nuevo",
+          "paymentStatus": false
+        }
+      ]
+    },
+    {
+      "idGroup": 8,
+      "name": "Danza clásica",
+      "dancers": [
+        {
+          "id": 15,
+          "name": "Micaela Rosa",
+          "paymentStatus": true
+        },
+        {
+          "id": 16,
+          "name": "Oriana Rosa",
+          "paymentStatus": false
+        }
+      ]
+    }
+  ]
+}

@@ -31,6 +31,7 @@ fetch(route)
       });
     });
 
+    // ALTERNO ATTR. DISABLE AL BOTÓN DE CONSULTAR
     selectDancers.addEventListener("change", function () {
       if (selectDancers.value !== "") {
         searchBTN.disabled = false;
@@ -43,21 +44,65 @@ fetch(route)
       const dancerSelected = selectDancers.value;
       const showResults = document.getElementById("results");
       showResults.classList.remove("d-none");
-      // debo encontrar la bailarina con un find
-      const group = data.groups.find((group) =>
-        group.dancers.some((dancer) => dancer.id === parseInt(dancerSelected))
-      );
-      const dancer = group.dancers.find(
-        (dancer) => dancer.id === parseInt(dancerSelected)
-      );
-      let paymentStatus = "";
-      if (dancer.payment === true) {
-        paymentStatus = `${dancer.name} pagó la cuota`;
-      } else {
-        paymentStatus = `${dancer.name} no pagó la cuota`;
+
+      // REFERENCIA DE LA TAB DE ASISTENCIAS
+      // const resultAttendances = document.getElementById("attendances-tab-pane");
+
+      // BUSCA EL GRUPO DONDE ESTÁ EL ID DE LA BAILARINA SELECCIONADA
+      const group = data.groups.find(group =>
+        group.dancers.some(dancer => dancer.id === parseInt(dancerSelected)));
+
+      // BUSCA A LA BAILARINA DENTRO DEL GRUPO
+      const dancer = group ? group.dancers.find(dancer => dancer.id === parseInt(dancerSelected)) :
+        alert('No se encontró la bailarina seleccionada');
+
+      function createAlert(message, status) {
+        const alertContainer = document.getElementById('payment-status-alert');
+        alertContainer.textContent = message;
+        alertContainer.classList.add('alert');
+
+        if (status === "success") {
+          alertContainer.classList.add('alert-success');
+          alertContainer.classList.remove('alert-danger');
+        } else {
+          alertContainer.classList.add('alert-danger');
+          alertContainer.classList.remove('alert-success');
+        }
       }
-      const result = document.getElementById("payments-tab-pane");
-      result.innerHTML = paymentStatus;
+
+      // CREO TABLA
+      function createTable() {
+        const existingTable = document.querySelector('#payment-status-table table');
+        existingTable ? existingTable.remove(): "";
+        const tableContainer = document.getElementById('payment-status-table');
+        const table = document.createElement('table');
+        table.classList.add('table')
+        const thead = document.createElement('thead');
+        const tr = document.createElement('tr');
+        const headers = ['Fecha', 'Mes', 'Tipo', 'Monto']
+        headers.forEach( header => {
+          const th = document.createElement('th')
+          th.textContent = header;
+          tr.appendChild(th);
+        })
+        thead.appendChild(tr);
+        table.appendChild(thead);
+        tableContainer.appendChild(table);  
+        
+      }
+
+      // MUESTRO ALERT DE ACUERDO AL ESTADO DE LA DEUDA
+      if (dancer.paymentStatus === true) {
+        alertContainer = createAlert(`Cuota al día`, `success`);
+
+      } else {
+        alertContainer = createAlert(`Cuota pendiente de pago`, `danger`);
+      }
+
+      // MUESTRO TABLA
+      createTable()
+
+
     }
 
     searchBTN.addEventListener("click", searchDancer);

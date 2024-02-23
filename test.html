@@ -4,47 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Consulta de ID por Nombre</title>
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-  <label for="nombreSelect">Selecciona un nombre:</label>
-  <select id="nombreSelect">
-    <!-- Aquí se llenarán las opciones con JavaScript -->
-  </select>
-  <button id="consultarBtn">Consultar</button>
-
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Alerts</title>
+    <style>
+      :root {
+        --alert-background-color-red: #ff9999;
+        --alert-background-color-blue: #9999ff;
+      }
+  
+      .custom-alert {
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+  
   <script>
-    // Tu base de datos en formato JSON
-    var baseDeDatos = [
-      { "id": 1, "nombre": "Nombre 1" },
-      { "id": 2, "nombre": "Nombre 2" },
-      { "id": 3, "nombre": "Nombre 3" }
-    ];
-
-    // Función para llenar el select con los nombres de la base de datos
-    function llenarSelect() {
-      var select = document.getElementById("nombreSelect");
-      baseDeDatos.forEach(function(elemento) {
-        var opcion = document.createElement("option");
-        opcion.text = elemento.nombre;
-        opcion.value = elemento.id;
-        select.add(opcion);
-      });
+    function createAlert(text, color) {
+      const alertDiv = document.createElement('div');
+      alertDiv.textContent = text;
+      alertDiv.classList.add('custom-alert');
+      alertDiv.style.backgroundColor = color;
+      document.body.appendChild(alertDiv);
     }
-
-    // Función para consultar el ID del nombre seleccionado
-    function consultarID() {
-      var nombreSeleccionado = document.getElementById("nombreSelect").value;
-      var resultado = baseDeDatos.find(function(elemento) {
-        return elemento.id == nombreSeleccionado;
-      });
-      alert("El ID del nombre seleccionado es: " + resultado.id);
-    }
-
-    // Llenar el select al cargar la página
-    llenarSelect();
-
-    // Agregar un evento de clic al botón "Consultar"
-    document.getElementById("consultarBtn").addEventListener("click", consultarID);
+  
+    // Ejemplo de uso
+    createAlert('Este es un mensaje de alerta', 'var(--alert-background-color-red)');
+    createAlert('Este es otro mensaje de alerta', 'var(--alert-background-color-blue)');
   </script>
+  
+  </body>
+  </html>
 </body>
 </html>
