@@ -1,48 +1,80 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Consulta de ID por Nombre</title>
-  <link rel="stylesheet" href="styles/styles.css">
-</head>
-<body>
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Alerts</title>
+    <title>Tabla de Pagos y Saldos</title>
     <style>
-      :root {
-        --alert-background-color-red: #ff9999;
-        --alert-background-color-blue: #9999ff;
-      }
-  
-      .custom-alert {
-        padding: 10px;
-        border-radius: 5px;
-        margin-bottom: 10px;
-      }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
     </style>
-  </head>
-  <body>
-  
-  <script>
-    function createAlert(text, color) {
-      const alertDiv = document.createElement('div');
-      alertDiv.textContent = text;
-      alertDiv.classList.add('custom-alert');
-      alertDiv.style.backgroundColor = color;
-      document.body.appendChild(alertDiv);
-    }
-  
-    // Ejemplo de uso
-    createAlert('Este es un mensaje de alerta', 'var(--alert-background-color-red)');
-    createAlert('Este es otro mensaje de alerta', 'var(--alert-background-color-blue)');
-  </script>
-  
-  </body>
-  </html>
+</head>
+<body>
+    <table id="tabla-pagos-saldos">
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Pago</th>
+                <th>Saldo</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-body">
+            <!-- Aquí se generará la tabla dinámicamente -->
+        </tbody>
+    </table>
+
+    <script>
+        // Datos de ejemplo (arreglo de objetos JSON)
+        const pagosSaldos = [
+            { fecha: '2024-02-01', pago: 500, saldo: 1500 },
+            { fecha: '2024-02-10', pago: 300, saldo: 1200 },
+            { fecha: '2024-02-20', pago: 700, saldo: 500 }
+            // Puedes agregar más objetos si lo deseas
+        ];
+
+        // Función para crear la tabla
+        function crearTabla() {
+            const tablaBody = document.getElementById('tabla-body');
+
+            // Limpiar contenido previo de la tabla
+            tablaBody.innerHTML = '';
+
+            // Iterar sobre cada objeto de pagosSaldos
+            pagosSaldos.forEach(pagoSaldo => {
+                const row = document.createElement('tr');
+
+                // Crear celdas para fecha, pago y saldo
+                const fechaCell = document.createElement('td');
+                fechaCell.textContent = pagoSaldo.fecha;
+
+                const pagoCell = document.createElement('td');
+                pagoCell.textContent = pagoSaldo.pago;
+
+                const saldoCell = document.createElement('td');
+                saldoCell.textContent = pagoSaldo.saldo;
+
+                // Agregar celdas a la fila
+                row.appendChild(fechaCell);
+                row.appendChild(pagoCell);
+                row.appendChild(saldoCell);
+
+                // Agregar fila a la tabla
+                tablaBody.appendChild(row);
+            });
+        }
+
+        // Llamar a la función para crear la tabla al cargar la página
+        window.onload = crearTabla;
+    </script>
 </body>
 </html>

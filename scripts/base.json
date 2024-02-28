@@ -10,16 +10,16 @@
           "paymentStatus": true,
           "payments": [
             {
-              "fecha": "01/01/2023",
-              "mes": "Enero",
-              "tipo": "Total",
-              "monto": "7000"
+              "date": "01/01/2023",
+              "month": "Enero",
+              "monthValue": 7000,
+              "payment": 7000
             },
             {
-              "fecha": "01/02/2023",
-              "mes": "Febrero",
-              "tipo": "Total",
-              "monto": "7000"
+              "date": "01/02/2023",
+              "month": "Febrero",
+              "monthValue": 10000,
+              "payment": 7000
             }
           ]
         },
@@ -29,16 +29,16 @@
           "paymentStatus": false,
           "payments": [
             {
-              "fecha": "02/01/2023",
-              "mes": "Enero",
-              "tipo": "Parcial",
-              "monto": "5000"
+              "date": "02/01/2023",
+              "month": "Enero",
+              "monthValue": 7000,
+              "payment": 7000
             }, 
             {
-              "fecha": "02/02/2023",
-              "mes": "Febrero",
-              "tipo": "Parcial",
-              "monto": "5000"
+              "date": "02/02/2023",
+              "month": "Febrero",
+              "monthValue": 10000,
+              "payment": 7000
             }
           ]
         }
@@ -47,6 +47,7 @@
     {
       "idGroup": 2,
       "name": "2 - Jazz y Clásico Elemental",
+      "price": 10000,
       "dancers": [
         {
           "id": 3,
@@ -63,6 +64,7 @@
     {
       "idGroup": 3,
       "name": "Jazz Juvenil",
+      "price": 10000,
       "dancers": [
         {
           "id": 5,
@@ -79,6 +81,7 @@
     {
       "idGroup": 4,
       "name": "Jazz Adultos Mañana",
+      "price": 10000,
       "dancers": [
         {
           "id": 7,
@@ -95,6 +98,7 @@
     {
       "idGroup": 5,
       "name": "Jazz Adultos Noche",
+      "price": 10000,
       "dancers": [
         {
           "id": 9,
@@ -111,6 +115,7 @@
     {
       "idGroup": 6,
       "name": "Jazz Intermedio",
+      "price": 10000,
       "dancers": [
         {
           "id": 11,
@@ -127,6 +132,7 @@
     {
       "idGroup": 7,
       "name": "Jazz Intermedio Avanzado",
+      "price": 10000,
       "dancers": [
         {
           "id": 13,
@@ -143,6 +149,7 @@
     {
       "idGroup": 8,
       "name": "Danza clásica",
+      "price": 10000,
       "dancers": [
         {
           "id": 15,
@@ -158,3 +165,4 @@
     }
   ]
 }
+
