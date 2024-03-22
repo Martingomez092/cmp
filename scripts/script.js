@@ -1,5 +1,37 @@
 const route = "http://127.0.0.1:5500/scripts/base.json";
 
+function saveData(data) {
+  fetch('https://jsonbin.org/martingomez092/', {
+    method: "POST",
+    headers: {
+      authorization: 'token 0b913a08-a18b-46ed-8dfc-a06909afc48a'
+    },
+    body: JSON.stringify(data)
+  }).then(res => res.json());
+}
+
+function getData() {
+  return fetch('https://jsonbin.org/martingomez092/', {
+    method: "GET",
+    headers: {
+      authorization: 'token 0b913a08-a18b-46ed-8dfc-a06909afc48a'
+    }
+  }).then(res => res.json());
+}
+
+
+async function useData() {
+  const promise = getData()
+  const data = await promise; 
+  console.log(data)
+}
+
+const objetin = { name: "agus"}
+saveData(objetin)
+getData()
+useData()
+
+
 fetch(route)
   .then((response) => response.json())
   .then((data) => {

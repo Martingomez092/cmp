@@ -10,13 +10,13 @@
           "paymentStatus": true,
           "payments": [
             {
-              "date": "01/01/2023",
+              "date": "01/01/23",
               "month": "Enero",
               "monthValue": 7000,
               "payment": 7000
             },
             {
-              "date": "01/02/2023",
+              "date": "01/02/23",
               "month": "Febrero",
               "monthValue": 10000,
               "payment": 7000
@@ -29,13 +29,13 @@
           "paymentStatus": false,
           "payments": [
             {
-              "date": "02/01/2023",
+              "date": "02/01/23",
               "month": "Enero",
               "monthValue": 7000,
               "payment": 7000
             }, 
             {
-              "date": "02/02/2023",
+              "date": "02/02/23",
               "month": "Febrero",
               "monthValue": 10000,
               "payment": 7000
