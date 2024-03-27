@@ -16,8 +16,7 @@ function modalConfirm(question, btnLink, btnPrimary, routeBtnLink, routeBtnPrima
     modalBody.appendChild(btnLinkElement);
     modal.appendChild(modalBody);
 
-    modal.classList.add('modal');
-    modal.classList.add('confirm');
+    modal.classList.add('modal', 'confirm' );
     modalBody.classList.add('modal-body');
 
     setTimeout(() => {

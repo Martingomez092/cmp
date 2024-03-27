@@ -27,11 +27,10 @@ async function useData() {
         const inValidNames = ["", " ", "  "];
         if (!inValidNames.includes(nameGroupValue)) {
             listGroups.push(newGroup);
-            // modalSuccess("¿Really?", "no sé", "guardar", "listGroups.html");
-            modalConfirm("¿Qué pasó con boca?", "cancelar", "continuar", "listGroups.html", "listGroups.html");
+            saveData({groups: listGroups})
+            modalSuccess("¡Cambio completado!", "Hemos guardado exitosamente los cambios realizados", "Continuar", "listGroups.html");
+            // modalConfirm("¿Qué pasó con boca?", "cancelar", "continuar", "listGroups.html", "listGroups.html");          
         }    
-        saveData({groups: listGroups})
-
     }
     
     formCreateGroups.addEventListener('submit', submitCreateGroup);
